@@ -1,6 +1,3 @@
-Bot Token API = 5674896057:AAHGNckxCuMY59FXaeAuLcN_IiUC0Czsvk8
-
-
 https://api.telegram.org/bot<Your Bot Token>/setWebhook?url=<URL that you got from Ngrok> (port 1000 in app.py)
 
 
