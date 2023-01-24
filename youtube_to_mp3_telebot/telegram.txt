@@ -1,0 +1,21 @@
+Bot Token API = 5674896057:AAHGNckxCuMY59FXaeAuLcN_IiUC0Czsvk8
+
+
+https://api.telegram.org/bot<Your Bot Token>/setWebhook?url=<URL that you got from Ngrok> (port 1000 in app.py)
+
+
+                tel_send_message(chat_id, "Downloading...")
+                yt = YouTube(txt.split(" ")[1])
+                video = yt.streams.filter(only_audio=True).first()
+                destination = '.'
+                out_file = video.download(output_path=destination)
+                base, ext = os.path.splitext(out_file)
+                new_file = base + '.mp3'
+                os.rename(out_file, new_file)
+                print(out_file, new_file)
+                yttitle = new_file[75 : len(new_file)]
+                print(yttitle + " has been successfully downloaded.")
+                tel_send_audio(chat_id, yttitle)
+                tel_send_message(chat_id, yttitle + " has been downloaded successfully!")
+                os.remove(new_file)
+                print(yttitle + " has been successfully deleted")
